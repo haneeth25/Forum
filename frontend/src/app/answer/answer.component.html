@@ -1,0 +1,47 @@
+<app-menu [user] = "user"></app-menu>
+<div class="main">
+    <div class="card">
+        <div class="card-header">
+          Created on :- {{ questionDetails.timestamp }}
+          <br>
+          Topics:- {{ questionDetails.topics}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ questionDetails.heading }}</h5>
+          <p class="card-text">{{ questionDetails.question }}</p>
+        </div>
+      </div>
+    <br>
+    <form (ngSubmit)="onSubmit()" #questionForm="ngForm">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Answer here :- </label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="new_answer" [(ngModel)] = "new_answer" required></textarea>
+      <br>
+      <button type="submit" [disabled]="questionForm.invalid" *ngIf = "userAvailable">Submit</button>
+      <button type="submit" [disabled]="true" *ngIf = "!userAvailable">Please Login to Answer</button>
+    </div>
+    </form>
+    <br>
+    <div class="card" *ngIf ="existing_answers">
+        <p class="list-group-item list-group-item-action active">
+            Existing Answers
+        </p>
+        <div *ngFor = "let each of questionDetails.answers">
+            <div class="card">
+                <div class="card-header">
+                  Created on :- {{each.timestamp }}
+                  <br>
+                  Created by:- {{each.userName}}
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{{ each.answer }}</p>
+                </div>
+              </div>
+            <a class="btn btn-primary" (click)="delete(each.answerId)" *ngIf ="each.canDelete">Delete</a>
+        </div>
+    </div>
+
+        <p class="list-group-item list-group-item-action active" *ngIf ="!existing_answers">
+            No Existing Answers 
+        </p> 
+</div>

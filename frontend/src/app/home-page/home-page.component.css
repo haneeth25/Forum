@@ -1,0 +1,12 @@
+.home-page{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1%;
+}
+.topics{
+    flex:0 0 20%;
+}
+.questions{
+    flex:0 0 70%;
+}

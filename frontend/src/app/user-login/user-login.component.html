@@ -1,0 +1,37 @@
+<app-menu> </app-menu>
+<div class="main">
+<div class="container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="text">User Name:</label>
+        <input type="text" class="form-control" id="text" required [(ngModel)]="userName" name="userName" placeholder="Enter userName">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" >Submit</button>
+    </form>
+    <!-- <div *ngIf="loginError" class="alert alert-danger mt-2">{{ loginError }}</div> -->
+  </div>
+  <div class="container">
+    <h2>Sign Up</h2>
+    <form (ngSubmit)="onSignUp()" #loginForm1="ngForm">
+      <div class="form-group">
+        <label for="text">User Name:</label>
+        <input type="text" class="form-control" id="text" required [(ngModel)]="newuserName" name="userName" placeholder="Enter userName">
+      </div>
+      <div class="form-group">
+        <label for="email">email:</label>
+        <input type="email" class="form-control" id="email" required [(ngModel)]="email" name="email" placeholder="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" required [(ngModel)]="newpassword" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm1.invalid">Submit</button>
+    </form>
+    <!-- <div *ngIf="loginError" class="alert alert-danger mt-2">{{ loginError }}</div> -->
+  </div>
+</div>

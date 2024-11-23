@@ -1,0 +1,41 @@
+<app-menu [user] = "user"></app-menu>
+<ul class="list-group">
+  <li class="list-group-item active">User details</li>
+  <li class="list-group-item">User Name:- {{details.userName}}</li>
+  <li class="list-group-item">User Email:- {{details.userEmail}}</li>
+</ul>  
+
+<br>
+<br>
+
+<li class="list-group-item active">User Activity</li>
+<div class="qa">
+<div>
+<div class="card"*ngFor = 'let msg of question'>
+    <div class="card-header">
+      Your Questions
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Created timestamp:- {{msg.timestamp}}</h5>
+      <p class="card-text">{{msg.heading}}</p>
+      <div class="mybtn">
+      <a [routerLink]="['/answer',msg.questionId]" class="btn btn-primary">View in Detail</a>
+      <a class="btn btn-primary" (click)="delete(msg.questionId)" *ngIf = "canDelete" >Delete</a>
+    </div>
+    </div>
+</div>
+</div>
+<div>
+<div class="card" *ngFor = "let msg of answers">
+    <div class="card-header">
+      Answered By you
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Created timestamp:- {{msg.timestamp}}</h5>
+      <p class="card-text">{{msg.answer}}</p>
+      <a [routerLink]="['/answer',msg.questionId]" class="btn btn-primary">View in detail</a>
+    </div>
+</div>
+</div>
+
+</div>

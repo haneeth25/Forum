@@ -1,0 +1,34 @@
+<div>
+  <p class="list-group-item list-group-item-action active">
+    Questions
+  </p>
+    <div *ngFor = "let question of questions" class="card">
+      <!-- <div class="card-body">
+        <h5 class="card-title"> Created Time :- {{ question.timestamp }}</h5>
+        <h5 class="card-title">Topics :- {{ question.topics}}</h5>
+        <h5 class="card-title">{{ question.heading }}</h5>
+        <p class="card-text">{{ question.question }}</p>
+        <a routerLink="/answer/{{ question.questionId }}" class="btn btn-primary">Answer</a> 
+        <a class="btn btn-primary" (click)="delete(question.questionId)">Delete</a>
+      </div> -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+          Created on :- {{ question.timestamp }}
+          <br>
+          <a [routerLink]="['/profile', question.userName]">Created by :- {{question.userName}}</a>
+        </div>
+          <div *ngIf="question.topics && question.topics.trim()">
+          Topics:- {{ question.topics}}
+        </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ question.heading }}</h5>
+          <p class="card-text">{{ question.question }}</p>
+          <a routerLink="/answer/{{ question.questionId }}" class="btn btn-primary">Answer</a> 
+          <a class="btn btn-primary" (click)="delete(question.questionId)" *ngIf = "question.canDelete">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

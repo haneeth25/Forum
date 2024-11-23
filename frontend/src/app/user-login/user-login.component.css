@@ -1,0 +1,8 @@
+.main{
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+.container{
+    margin: 3%;
+}

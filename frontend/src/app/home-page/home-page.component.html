@@ -1,0 +1,12 @@
+<app-menu [user] = "user"></app-menu>
+<div class = "home-page">
+    <div class="topics">
+        <a href="#" class="list-group-item list-group-item-action active">
+          Topics
+        </a>
+        <div *ngFor = "let topic of topics">
+        <a routerLink="/topic-filter/{{topic.topicId}}" class="list-group-item list-group-item-action">{{topic.topicName}} ({{topic.questionCount}})</a>
+        </div>
+    </div>
+    <app-questions-list [questions]="questions" class="questions"></app-questions-list>
+</div>

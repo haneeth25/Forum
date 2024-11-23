@@ -1,0 +1,12 @@
+.qa{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 1%;
+}
+.mybtn{
+    display: flex;
+}
+.btn{
+    margin: 1.5px;
+}

@@ -1,0 +1,28 @@
+<app-menu [user] = "user"></app-menu>
+
+<div class = "main">
+<!-- <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="question">Question:</label>
+      <textarea id="question" name="question" [(ngModel)] = 'question' required></textarea>
+    </div>
+    <br>
+    <button type="submit">Submit</button>
+  </form> -->
+
+  <form class="question-form" (ngSubmit)="onSubmit()" #questionForm="ngForm">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Heading</label>
+      <input type="email" name = 'headline' class="form-control" id="exampleFormControlInput1" placeholder="Enter heading" [(ngModel)] = 'headline' required>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Topics</label>
+        <input type="email" name = 'topics' class="form-control" id="exampleFormControlInput1" placeholder="Enter comma seperated" [(ngModel)] = 'topics' required>
+      </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" name = 'description' id="exampleFormControlTextarea1" rows="3" [(ngModel)] = 'description' required></textarea>
+    </div>
+    <button type="submit" class="button" [disabled]="questionForm.invalid">Submit</button>
+  </form>
+</div>
