@@ -1,6 +1,6 @@
-# Project Name
+# Forum
 
-A brief description of the project and its purpose.
+This is a full-stack application built with Angular for the frontend and Spring Boot for the backend, using a MySQL database. The application allows users to authenticate, create and answer questions, and manage their profiles. It also features a search functionality, dynamic topic sorting, and the ability for users to view and interact with questions based on different topics.
 
 ---
 
