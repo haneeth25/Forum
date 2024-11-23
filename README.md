@@ -81,3 +81,7 @@ Usage
 Once both the frontend and backend are running:
 1. Open your browser and navigate to http://localhost:4200 to access the frontend.
 2. The frontend will communicate with the backend to perform operations.
+
+
+https://github.com/user-attachments/assets/01945f6e-879d-4daf-8d40-55f8a9ba8133
+
